@@ -6,7 +6,4 @@ Instructions:
 3. You can change the location of King James Bible, encryption 'key', 'counter' and 'nonce' near the end of the script.
 4. Run 'python3 salsa20.py' (if you are using Python3).
 5. The encrypted cyphertext file will be outputted to the same directory as the script.
-6. Use 'time python3 salsa20.py', the runtime of this encryption is about 10 seconds.
-	real	0m9.746s
-	user	0m9.629s
-	sys	0m0.065s
+6. We could not finish the script by the deadline, since we have some minor issues that still needs to be solved. However, if it works in the future, use 'time python3 salsa20.py' will return the runtime of this encryption.

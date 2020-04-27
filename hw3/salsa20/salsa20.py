@@ -73,7 +73,8 @@ if __name__ == "__main__":
         pass
 
     #define the plaintext path
-    #plaintext = 'This is a cryptology class'
+    #in_16 = 'This is a cryptology class'
+    #in_16 = [0x61707865, 0x3320646e, 0x79622d32, 0x6b206574]
     bible_path = "pg10.txt"
     cypher = "encrypted.txt"
     nonce = [3,1,4,1,5,9,2,6]
@@ -81,6 +82,8 @@ if __name__ == "__main__":
     key = '1b27556473e985d462cd51197a9a46c76009549eac6474f206c4ee0844f68389'
     output = open(cypher, "w")
 
+    #print (main(in_16, nonce, counter, key))
+    
     with open(bible_path, "rb") as bible:
         in_16 = bible.read(16)
         while in_16 != b'':

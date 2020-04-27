@@ -76,8 +76,8 @@ if __name__ == "__main__":
     #plaintext = 'This is a cryptology class'
     bible_path = "pg10.txt"
     cypher = "encrypted.txt"
-    nonce = 
-    counter = [0x61707865, 0x3320646e, 0x79622d32, 0x6b206574]
+    nonce = 0
+    counter = 0
     key = '1b27556473e985d462cd51197a9a46c76009549eac6474f206c4ee0844f68389'
     output = open(cypher, "w")
 
@@ -85,6 +85,8 @@ if __name__ == "__main__":
 	    in_16 = bible.read(16)
 	    while in_16 != b'':
 	    	print(main(in_16, nonce, counter, key), file = output)
+            counter += 1
+            nonce += 1
     
     bible.close()
     output.close()

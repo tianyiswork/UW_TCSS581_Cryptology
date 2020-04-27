@@ -86,7 +86,6 @@ if __name__ == "__main__":
 
     #define the key
     key = 'crypto'
-    #plaintext = 'wearewinners'
 
     #define the plaintext path
     #plaintext = 'This is a cryptology class'

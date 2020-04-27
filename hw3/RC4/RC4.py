@@ -5,11 +5,10 @@
 # TCSS 581 - Spring 2020
 
 
-# Key Scheduling Alg accepts a keyseed as input
-# and expands it to keystream. 
-
 import sys
 
+# Key Scheduling Alg accepts a keyseed as input
+# and expands it to keystream. 
 def KSA(key):
 
     keylength = len(key)

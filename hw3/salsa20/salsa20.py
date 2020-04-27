@@ -17,9 +17,9 @@ def ROTL(b, r):
 # quarter round function
 def QR(a, b, c, d):
 
-    b ^= ROTL(a + d, 7)	
-    c ^= ROTL(b + a, 9)	
-    d ^= ROTL(c + b, 13)	
+    b ^= ROTL(a + d, 7) 
+    c ^= ROTL(b + a, 9) 
+    d ^= ROTL(c + b, 13)    
     a ^= ROTL(d + c, 18)
 
 
@@ -68,7 +68,7 @@ def main(in_16, nonce, counter, key):
 if __name__ == "__main__":
     
 
-	#empty the output file, if there was one
+    #empty the output file, if there was one
     with open('encrypted.txt', 'w'): 
         pass
 
@@ -82,9 +82,9 @@ if __name__ == "__main__":
     output = open(cypher, "w")
 
     with open(bible_path, "rb") as bible:
-	    in_16 = bible.read(16)
-	    while in_16 != b'':
-	    	print(main(in_16, nonce, counter, key), file = output)
+        in_16 = bible.read(16)
+        while in_16 != b'':
+            print(main(in_16, nonce, counter, key), file = output)
     
     bible.close()
     output.close()

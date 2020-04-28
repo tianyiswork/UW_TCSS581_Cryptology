@@ -18,6 +18,9 @@ def ROTL(b, r):
 def QR(a, b, c, d):
 
     b ^= ROTL(a + d, 7) 
+
+    print(a)
+
     c ^= ROTL(b + a, 9) 
     d ^= ROTL(c + b, 13)    
     a ^= ROTL(d + c, 18)
@@ -32,9 +35,10 @@ def main(in_16, nonce, counter, key):
     n = [(nonce[4 * i : 4 * i + 4]) for i in range(2)]
     b = [(counter[4 * i : 4 * i + 4]) for i in range(2)]
 
-    in_16 = [16]
+   
     x = [16]
     i = 0
+
 
     x = [in_16[0], k[0], k[1], k[2], 
     k[3], in_16[1], n[0], n[1],
@@ -73,21 +77,22 @@ if __name__ == "__main__":
         pass
 
     #define the plaintext path
-    #in_16 = 'This is a cryptology class'
-    #in_16 = [0x61707865, 0x3320646e, 0x79622d32, 0x6b206574]
+    #plaintext = 'This is a cryptology class'
     bible_path = "pg10.txt"
     cypher = "encrypted.txt"
     nonce = [3,1,4,1,5,9,2,6]
-    counter = [7,0,0,0,0,0,0,0]
+    counter = [0,0,0,0,0,0,0,0]
     key = '1b27556473e985d462cd51197a9a46c76009549eac6474f206c4ee0844f68389'
     output = open(cypher, "w")
 
-    #print (main(in_16, nonce, counter, key))
-    
     with open(bible_path, "rb") as bible:
         in_16 = bible.read(16)
+
+        #int(binaryString = ''.join(format(ord(i), 'b') for i in in_16)) 
+
         while in_16 != b'':
             print(main(in_16, nonce, counter, key), file = output)
-    
+            for el in counter, nonce:
+                el + 1
     bible.close()
     output.close()
